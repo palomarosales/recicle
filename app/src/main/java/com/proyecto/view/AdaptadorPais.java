@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
@@ -33,8 +32,8 @@ public class AdaptadorPais extends RecyclerView.Adapter<AdaptadorPais.MyViewHold
             textViewPais= v.findViewById(R.id.textViewPais);
             textViewCapital=v.findViewById(R.id.textViewCapital);
             imageViewB = v.findViewById(R.id.imageViewBandera);
-            textViewCapital=v.findViewById(R.id.textViewPoblacion);
-            imageViewB = v.findViewById(R.id.imageViewMapa);
+            textViewPoblacion=v.findViewById(R.id.textViewPoblacion);
+            imageViewM= v.findViewById(R.id.imageViewMapa);
         }
     }
 
@@ -53,8 +52,9 @@ public class AdaptadorPais extends RecyclerView.Adapter<AdaptadorPais.MyViewHold
         return new AdaptadorPais.MyViewHolder(v);
     }
 
+
     @Override
-    public void onBindViewHolder(AdaptadorPais.MyViewHolder holder,int position ) {
+    public void onBindViewHolder(AdaptadorPais.MyViewHolder holder,int position ){
         Pais p = paises.get(position);
         holder.textViewPais.setText(p.getNombre());
         holder.textViewCapital.setText(p.getCapital());
@@ -62,6 +62,9 @@ public class AdaptadorPais extends RecyclerView.Adapter<AdaptadorPais.MyViewHold
         holder.textViewPoblacion.setText(p.getPoblacion());
         Glide.with(holder.imageViewM.getContext()).load(p.getMapa()).into(holder.imageViewM);
     }
+
+
+
 
     @Override
     public int getItemCount() {

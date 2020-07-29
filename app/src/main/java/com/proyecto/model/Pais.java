@@ -7,8 +7,7 @@ public class Pais {
     private String poblacion;
     private String mapa;
 
-    public Pais (){
-    }
+
 
     public Pais (String nombre, String capital,String bandera,String poblacion,String mapa){
         this.nombre=nombre;
