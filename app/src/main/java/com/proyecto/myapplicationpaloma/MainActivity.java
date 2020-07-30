@@ -33,13 +33,8 @@ public class MainActivity extends AppCompatActivity{
         _binding.recyclerViewPaises.setLayoutManager(layoutManager);
 
         List<Pais>paises=getListaProductos();
-
-        RecyclerView.Adapter adapter=new AdaptadorPais(paises);
+        RecyclerView.Adapter adapter=new AdaptadorPais(paises,this);
         _binding.recyclerViewPaises.setAdapter(adapter);
-
-
-
-
 
     }
 
@@ -54,7 +49,7 @@ public class MainActivity extends AppCompatActivity{
             while ((line = reader.readLine()) != null){
                 Log.e("code",line);
                 String[] d = line.split(";");
-                Pais p = new Pais(d[0],d[1],d[2],d[3],d[4]);
+                Pais p = new Pais(d[0],d[1],d[2],d[3],d[4],d[5]);
                 productos.add(p);
             }
 

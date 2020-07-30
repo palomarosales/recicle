@@ -6,15 +6,24 @@ public class Pais {
     private String bandera;
     private String poblacion;
     private String mapa;
+    private String himno;
 
 
+    public Pais(String nombre, String capital, String bandera, String poblacion, String mapa, String himno) {
+        this.nombre = nombre;
+        this.capital = capital;
+        this.bandera = bandera;
+        this.poblacion = poblacion;
+        this.mapa = mapa;
+        this.himno = himno;
+    }
 
-    public Pais (String nombre, String capital,String bandera,String poblacion,String mapa){
-        this.nombre=nombre;
-        this.capital=capital;
-        this.bandera=bandera;
-        this.poblacion=poblacion;
-        this.mapa=mapa;
+    public String getHimno() {
+        return himno;
+    }
+
+    public void setHimno(String himno) {
+        this.himno = himno;
     }
 
     public String getNombre() {

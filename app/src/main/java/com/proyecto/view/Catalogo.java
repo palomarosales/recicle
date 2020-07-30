@@ -28,14 +28,14 @@ public class Catalogo extends AppCompatActivity{
         View view = binding.getRoot();
         setContentView(view);
 
-
         binding.recyclerViewPaises.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         binding.recyclerViewPaises.setLayoutManager(layoutManager);
 
         List<Pais> paises = getListaPaises();
-        RecyclerView.Adapter mAdapter = new AdaptadorPais(paises);
+        RecyclerView.Adapter mAdapter = new AdaptadorPais(paises,this);
         binding.recyclerViewPaises.setAdapter(mAdapter);
+
     }
 
     protected List<Pais> getListaPaises() {
@@ -48,7 +48,7 @@ public class Catalogo extends AppCompatActivity{
                 Log.e("code",line);
                 String[] d = line.split(";");
 
-                Pais p = new Pais(d[0],d[1],d[2],d[3],d[4]);
+                Pais p = new Pais(d[0],d[1],d[2],d[3],d[4],d[5]);
                 paises.add(p);
             }
 
